@@ -13,35 +13,33 @@ public class GenerateOrDeleteWorkers {
 
         session.beginTransaction();
 
-        DepartmentDAO departmentDAO = new DepartmentDAO(session);
-
         session.saveOrUpdate(new Workers
-                (1, 25, Workers.Availability.FULL_TIME, "J_A", departmentDAO
-                        .findById(1)));
+                (1, 25, Workers.Availability.FULL_TIME, "J_A",
+                        session.load(Department.class, 1)));
         session.saveOrUpdate(new Workers
-                (2, 26, Workers.Availability.FULL_TIME, "J_B", departmentDAO
-                        .findById(2)));
+                (2, 26, Workers.Availability.FULL_TIME, "J_B",
+                        session.load(Department.class, 2)));
         session.saveOrUpdate(new Workers
-                (3, 27, Workers.Availability.FULL_TIME, "J_C", departmentDAO
-                        .findById(3)));
+                (3, 27, Workers.Availability.FULL_TIME, "J_C",
+                        session.load(Department.class, 3)));
         session.saveOrUpdate(new Workers
-                (4, 28, Workers.Availability.FULL_TIME, "J_D", departmentDAO
-                        .findById(4)));
+                (4, 28, Workers.Availability.FULL_TIME, "J_D",
+                        session.load(Department.class, 4)));
         session.saveOrUpdate(new Workers
-                (5, 29, Workers.Availability.FULL_TIME, "J_E", departmentDAO
-                        .findById(1)));
+                (5, 29, Workers.Availability.FULL_TIME, "J_E",
+                        session.load(Department.class, 1)));
         session.saveOrUpdate(new Workers
-                (6, 30, Workers.Availability.PART_TIME, "J_F", departmentDAO
-                        .findById(2)));
+                (6, 30, Workers.Availability.PART_TIME, "J_F",
+                        session.load(Department.class, 2)));
         session.saveOrUpdate(new Workers
-                (7, 31, Workers.Availability.PART_TIME, "J_J", departmentDAO
-                        .findById(3)));
+                (7, 31, Workers.Availability.PART_TIME, "J_J",
+                        session.load(Department.class, 3)));
         session.saveOrUpdate(new Workers
-                (8, 32, Workers.Availability.PART_TIME, "J_H", departmentDAO
-                        .findById(3)));
+                (8, 32, Workers.Availability.PART_TIME, "J_H",
+                        session.load(Department.class, 3)));
         session.saveOrUpdate(new Workers
-                (9, 33, Workers.Availability.PART_TIME, "J_I", departmentDAO
-                        .findById(4)));
+                (9, 33, Workers.Availability.PART_TIME, "J_I",
+                        session.load(Department.class, 4)));
         session.getTransaction().commit();
     }
 
